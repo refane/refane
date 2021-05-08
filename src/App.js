@@ -3,7 +3,6 @@ import ContentEditable from './components/ContentEditable'
 import AppHeader from './components/AppHeader'
 import SettingsMenu from './components/SettingsMenu'
 import SettingsIcon from './components/SettingsIcon'
-import analytics from './utils/analytics'
 import api from './utils/api'
 import sortByDate from './utils/sortByDate'
 import isLocalHost from './utils/isLocalHost'
@@ -15,9 +14,6 @@ export default class App extends Component {
     showMenu: false
   }
   componentDidMount() {
-
-    /* Track a page view */
-    analytics.page()
 
     // Fetch all todos
     api.readAll().then((todos) => {
